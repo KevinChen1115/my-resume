@@ -18,8 +18,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 5rem;
+  height: 5rem;
   /* background-color: var(--icon-bg-color); */
   color: var(--icon-color);
   border-radius: 50%; /* 製作完美圓形的標準寫法 */
@@ -487,6 +487,8 @@ button {
   font-size: 15px;
 }
 
+
+
 /* ================================== */
 /* === RWD / 手機版樣式 (Mobile) === */
 /* ================================== */
@@ -495,6 +497,7 @@ button {
 
   h1 {
     text-align: center;
+    font-size: 2rem;
   }
 
   h2 {
@@ -512,15 +515,12 @@ button {
   /* --- Mobile Header (Visible on Mobile) --- */
   .mobile-header {
     display: flex;
-    /* 在手機上顯示 */
     align-items: center;
     justify-content: space-between;
-    /* 讓名字和漢堡選單左右對齊 */
     background: #222;
     color: #fff;
     height: 56px;
     padding: 0 16px;
-    /* 左右增加內距，避免貼邊 */
     position: fixed;
     width: 100%;
     top: 0;
@@ -530,9 +530,7 @@ button {
 
   .mobile-header .logo {
     font-size: 1.5rem;
-    /* 將字體從預設的 16px 放大到 20px (您可以改成任何想要的大小) */
     font-weight: bold;
-    /* 也可以順便加粗，看起來更醒目 */
   }
 
   .menu-toggle {
@@ -545,19 +543,15 @@ button {
 
   /* --- Sidebar (Mobile Dropdown Menu) --- */
   .sidebar {
-    /* 把桌面版的 sidebar 樣式，變成手機版的下拉選單 */
     background: #222;
     width: 100%;
     height: auto;
     padding: 24px 0;
     top: 56px;
-    /* 移到 header 下方 */
     left: 0;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 16px 16px;
     z-index: 1100;
-
-    /* 動畫設定 */
     visibility: hidden;
     opacity: 0;
     transform: translateY(-10px);
@@ -573,7 +567,6 @@ button {
 
   .sidebar h2 {
     display: none;
-    /* 手機版隱藏 "陳柏宇" 標題 */
   }
 
   .avatar {
@@ -585,7 +578,6 @@ button {
 
   .avatar img {
     object-position: center;
-    /* 讓頭像在手機上置中 */
   }
 
   #nav-list {
@@ -600,123 +592,245 @@ button {
     width: 100%;
     text-align: center;
     margin: 16px 0;
-    /* 可以微調上下間距 */
   }
 
   /* --- Main Content (Mobile) --- */
   .main-content {
     width: 100%;
     margin-left: 0;
-    /* 取消桌面版的左邊距 */
     padding: 80px 20px 20px 20px;
-    /* 調整內距 (上/左右/下) */
     height: auto;
-    /* 高度由內容決定 */
     overflow-y: visible;
-    /* 恢復正常滾動 */
     scroll-snap-type: none;
-    /* 關閉吸附 */
   }
 
   .section {
     height: auto;
-    /* 高度由內容決定 */
     min-height: 0;
-    /* 取消最小高度限制 */
     padding: 20px 0;
-    /* 自行調整手機板的上下間距 */
     margin-bottom: 40px;
-    /* 恢復區塊間的間距 */
   }
 
-  /* --- Contact (Mobile) --- */
-  .contact-container {
-    flex-direction: column;
-    /* 從水平並排變為垂直堆疊 */
-  }
-
-  #backToTop {
-    position: fixed;
-    bottom: 10px;
-
-    /* --- 尺寸設定 --- */
-    width: 60px;
-    /* 設定您希望的按鈕寬度 */
-    height: 60px;
-    /* 設定您希望的按鈕高度 */
-  }
-
-  .item-meta {
+  /* 關於我區塊 */
+  #about p {
     width: 100%;
-    display: flex;
-    font-size: 9px;
+    font-size: 16px;
+    padding: 0 10px;
   }
-  /* 學習經歷手機版 */
-  #edu {
-    padding: 20px 10px;
+
+  #about h1 {
+    font-size: 2rem;
   }
-  
-  #edu h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+
+  /* 社群圖示 */
+  .social-icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
   }
-  
-  .edu-section {
-    margin-bottom: 25px;
+
+  .social-icon {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 0;
   }
-  
-  .edu-section-title {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+
+  .social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
   }
-  
-  .education-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .education-title {
-    font-size: 1rem;
-  }
-  
-  .education-card {
-    padding: 14px 16px;
-  }
-  
-  .project-card-edu {
-    padding: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .project-card-edu h3 {
-    font-size: 1.1rem;
-  }
-  
-  .project-card-edu h4 {
-    font-size: 0.95rem;
-    margin-top: 12px;
-  }
-  
-  .project-card-edu p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
+
   /* 技能卡片手機版 */
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 10px;
   }
-  
+
   .skill-card {
     padding: 24px 16px;
   }
-  
+
   .skill-icon {
     font-size: 2.5rem;
   }
-  
+
   .skill-card h3 {
     font-size: 1.1rem;
   }
+
+  /* 學習經歷手機版 */
+  #edu {
+    padding: 20px 10px;
+  }
+
+  #edu h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .edu-section {
+    margin-bottom: 25px;
+  }
+
+  .edu-section-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-title {
+    font-size: 1rem;
+  }
+
+  .education-card {
+    padding: 14px 16px;
+  }
+
+  /* 專案經驗手機版 */
+  #project-exp {
+    padding: 20px 10px;
+  }
+
+  #project-exp h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-card-edu {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .project-card-edu h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-card-edu h4 {
+    font-size: 0.95rem;
+    margin-top: 12px;
+  }
+
+  .project-card-edu p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 工作經驗手機版 */
+  #exp p {
+    font-size: 14px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .item-meta {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* 作品集手機版 */
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .project-card {
+    padding: 16px;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .project-card img {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* 測試帳號手機版 */
+  .test-account {
+    margin-top: 12px;
+    padding: 10px;
+  }
+
+  .test-account p {
+    font-size: 0.85rem;
+    text-align: left;
+  }
+
+  .test-account code {
+    font-size: 0.85rem;
+    padding: 2px 6px;
+  }
+
+  /* --- Contact (Mobile) --- */
+  #contact {
+    padding: 20px 10px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .contact-form-wrapper,
+  .contact-info {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* 回到頂端按鈕 */
+  #backToTop {
+    position: fixed;
+    bottom: 10px;
+    width: 60px;
+    height: 60px;
+  }
+
+}
+
+/* 測試帳號樣式 */
+.test-account {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(0, 221, 255, 0.1);
+  border-left: 3px solid var(--primary-color);
+  border-radius: 6px;
+}
+
+.test-account p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.test-account code {
+  background: #2a2b30;
+  color: #00ddff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
 }
