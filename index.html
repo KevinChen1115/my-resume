@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>履歷</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="img/dog1-modified.png">
+</head>
+
+<body>
+
+  <header class="mobile-header">
+    <span class="logo">Kevin</span>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="avatar">
+        <img src="./img/resumephoto.jpg " alt="大頭貼">
+        <a href="#about"></a>
+      </div>
+      <h2>Kevin</h2>
+      <nav>
+        <ul id="nav-list">
+          <li><a href="#about">關於我</a></li>
+          <li><a href="#skills">技能</a></li>
+          <li><a href="#edu">學習經歷</a></li>
+          <li><a href="#project-exp">專案經驗</a></li> <!-- 新增這行 -->
+          <li><a href="#exp">工作經驗</a></li>
+          <li><a href="#projects">作品集</a></li>
+          <li><a href="#contact">聯絡</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <button id="backToTop" title="回到頂端"><img src="./img/icons8-up-squared-64.png" alt="" /></button>
+    <main class="main-content">
+
+      <section id="about" class="section">
+        <div class="fade-up">
+          <h1>我是Kevin</h1>
+          <p>畢業於亞東科大資管系，目前在 Java 養成班持續學習後端開發。課程中熟悉了 Java 物件導向、MySQL 資料庫操作，以及 Git / Linux
+            的使用和協作流程。我喜歡從零開始慢慢做出一個能實際運作的系統，也習慣搭配 AI 工具來提升效率、解決問題。希望未來能把這些學到的東西實際用在工作上，為團隊帶來幫助，成為一位務實的工程師。
+          </p>
+        </div>
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="查看我的 LinkedIn 個人檔案" target="_blank" rel="noopener noreferrer">
+            <img src="img/linkedin.png" alt="LinkedIn">
+          </a>
+          <a href="#" class="social-icon" aria-label="查看我的 GitHub" target="_blank" rel="noopener noreferrer">
+            <img src="img/github.png" alt="GitHub">
+          </a>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+  <div class="fade-up">
+    <h2>技能</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">☕</div>
+        <h3>後端開發</h3>
+        <p>Java / Spring Boot / Spring Security / Spring Data JPA</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">💾</div>
+        <h3>資料庫</h3>
+        <p>MySQL / MariaDB / 資料庫設計</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h3>前端開發</h3>
+        <p>HTML / CSS / JavaScript / React</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">🔌</div>
+        <h3>後端整合</h3>
+        <p>RESTful API / Thymeleaf / HttpSession</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">🐧</div>
+        <h3>系統管理</h3>
+        <p>Linux</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">📦</div>
+        <h3>版本控制</h3>
+        <p>Git / GitHub</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">🎯</div>
+        <h3>專案管理</h3>
+        <p>敏捷開發 / 產品規劃</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">🎮</div>
+        <h3>其他</h3>
+        <p>遊戲互動設計 / PWA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section id="edu" class="section">
+        <div class="fade-up">
+          <h2>學習經歷</h2>
+
+          <div class="edu-section">
+
+            <div class="education-card">
+              <div class="education-header">
+                <span class="education-title">亞東科技大學 資訊管理系</span>
+                <span class="education-date">108年 09月 — 112年 06月</span>
+              </div>
+            </div>
+
+            <div class="education-card">
+              <div class="education-header">
+                <span class="education-title">Java養成班 (文大推廣 x 程式驅動)</span>
+                <span class="education-date">114年 06月 — 114年 10月</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="project-exp" class="section">
+        <div class="fade-up">
+          <h2>專案經驗</h2>
+
+          <div class="edu-section">
+            <div class="project-card-edu">
+              <h3>餐廳訂位系統 (後端)</h3>
+              <p>完整的註冊與登入流程，整合 Spring Security 進行 BCrypt 密碼加密，並透過 Spring Data JPA 與 MySQL 進行資料持久化。同時，使用 HttpSession
+                管理使用者登入狀態，並以 Thymeleaf 進行伺服器端頁面渲染。</p>
+            </div>
+
+            <div class="project-card-edu">
+              <h3>胃旅圖 (組長 & PM)</h3>
+
+              <h4>策略性產品轉向 (Strategic Pivot)</h4>
+              <p>基於競賽主題與市場機會分析，成功主導團隊將專案方向從個人健康 App，轉型為「饒河夜市」量身打造的 B2C/B2B 智慧觀光解決方案，確立了以「遊戲化體驗獲取數據，以數據服務賦能商圈」的核心商業模式。
+              </p>
+
+              <h4>產品規格定義 (Full-Stack Specification)</h4>
+              <p>提出 React PWA + Spring Boot 技術架構方案。產出驅動開發的文件，包含：使用者流程圖 (User Flow)、前後端 RESTful API 規格書、資料庫結構 (Database
+                Schema)。</p>
+
+              <h4>敏捷開發與風險管理 (Agile & Risk Management)</h4>
+              <p>採用敏捷開發模式，將一個月的時程拆解為明確的週衝刺計畫。主導關鍵技術決策（如選擇 PWA 而非原生 App、選擇 Dialogflow 而非 LLM），有效降低專案風險。每日追蹤進度，識別瓶頸，確保 MVP
+                能在時限內高品質交付。</p>
+            </div>
+          </div>
+        </div>
+      </section>F
+
+      <section id="exp" class="section">
+        <div class="fade-up">
+          <h2>工作經驗</h2>
+          <div class="item-meta">
+            <h2>行政助理(合作金庫), 大新企管</h2>
+            <h2>113年 05月 — 114年 05月</h2>
+          </div>
+          <p style="font-size:16px">協助行政人員處理日常事務，並協助資料整理與報表製作，與工作流程規劃。
+          </p>
+        </div>
+      </section>
+
+
+      <section id="projects" class="section">
+        <div class="fade-up">
+          <h2>作品集</h2>
+          <div class="project-list">
+            <div class="project-card">
+              <img src="img/Login1.png" alt="專案圖片" />
+              <div>
+                <h3>餐廳訂位系統</h3>
+                <p>實作完整的註冊與登入流程，整合 Spring Security 進行 BCrypt 密碼加密，並透過 Spring Data JPA 與 MySQL 進行資料持久化。同時，使用 HttpSession
+                  管理使用者登入狀態，並以 Thymeleaf 進行伺服器端頁面渲染。</p>
+              </div>
+            </div>
+            <div class="project-card">
+              <img src="img/logo.png" alt="專案圖片" />
+              <div><a
+                  href="https://docs.google.com/presentation/d/1aa55IYsTiiE10vhd2EsHH0NFj6RMZ7Gl/edit?usp=sharing&ouid=103430362942245549640&rtpof=true&sd=true">
+                  <h3>胃旅圖(點我)</h3>
+                  <p>「胃旅圖」是一款結合PWA與AR技術的創新遊戲化平台，並導入AI做為逛夜市時的小幫手，專為夜市數位轉型而設計。
+
+                    遊客透過手機掃描QR Code進行解謎，與攤位環境產生趣味互動，並收集獨特的數位徽章作為紀念。
+
+                    我們的核心使命是將逛夜市的習慣，透過互動遊戲與數據統計的營運模式，為觀光產業的數位轉型提供創新解決方案，同時創造遊客、店家與商圈管理者的三贏局面。</p>
+              </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="fade-up">
+          <div class="contact-container">
+            <div class="contact-form-wrapper">
+              <h2>聯絡我</h2>
+              <form id="contact-form">
+                <input type="text" placeholder="您的姓名" required />
+                <input type="email" placeholder="您的信箱" required />
+                <textarea placeholder="您的訊息..." required></textarea>
+                <button type="submit">送出</button>
+              </form>
+            </div>
+
+            <div class="contact-info">
+              <h2>聯絡資訊</h2>
+              <p style="text-align: left;">電話：0963810779</p>
+              <p style="text-align: left;">信箱：kevin2637688@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,722 @@
+/* =================================== */
+/* === 全域 / 桌面版樣式 (Desktop First) === */
+/* =================================== */
+/* 定義顏色變數，方便統一管理和修改 */
+:root {
+  --primary-color: #e86100; /* 您 email 的橘色 */
+  --icon-bg-color: #495057; /* 圖示預設背景色 */
+  --icon-color: #ffffff;    /* 圖示本身的顏色 (白色) */
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* 使用 gap 來控制間距 */
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  /* background-color: var(--icon-bg-color); */
+  color: var(--icon-color);
+  border-radius: 50%; /* 製作完美圓形的標準寫法 */
+  font-size: 1.5rem;
+  text-decoration: none; /* 確保連結沒有底線 */
+  margin-top: 5rem;
+  
+  /* 加上平滑的過渡效果 */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  /* background-color: var(--primary-color); */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  outline: none; /* 移除 focus 時瀏覽器預設的藍色外框，因為我們已經自訂了效果 */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --- 新增：平滑滾動與吸附效果 --- */
+html {
+  scroll-behavior: smooth;
+  /* 讓錨點連結的跳轉是平滑滾動 */
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #12151b;
+  color: #f2f2f2;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#about p {
+  text-align: center;
+  width: 80%;
+  font-size: 20px;
+}
+
+#edu p {
+  text-align: center;
+  width: 80%;
+  font-size: 16px;
+}
+
+.item-meta {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.layout {
+  display: flex;
+}
+
+section table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+section table th {
+  text-align: left;
+}
+
+/* --- Sidebar (Desktop) --- */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #1a071f;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 255, 255, 0.05);
+  z-index: 1000;
+}
+
+.sidebar h2 {
+  color: #00ddff;
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar nav ul li a:hover {
+  color: #00ffff;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: block;
+  margin: 200px auto 30px auto;
+  /* 使用 margin auto 水平置中並增加下方間距 */
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Main Content (Desktop) --- */
+.main-content {
+  margin-left: 220px;
+  width: calc(100% - 220px);
+  /* padding: 40px; 因為 padding 會加到各個 section 裡 */
+  height: 100vh;
+  /* 讓主內容區跟螢幕一樣高 */
+  overflow-y: scroll;
+  /* 允許垂直滾動 */
+  scroll-snap-type: y mandatory;
+  /* 垂直方向(y軸)強制吸附 */
+}
+
+.section {
+  /* margin-bottom: 80px; 一個section一頁所以不需要 */
+  height: 100vh;
+  /* 設定區塊高度為螢幕的100% */
+  min-height: 650px;
+  /* 最小高度，避免內容在矮螢幕被擠壓 */
+  width: 100%;
+  /* 確保 section 寬度填滿 main-content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* 垂直置中內容 */
+  align-items: center;
+  /* 水平置中內容 */
+  box-sizing: border-box;
+  /* 確保 padding 不會影響總高度 */
+  scroll-snap-align: start;
+  /* 每個 section 的頂部作為吸附對齊點 */
+}
+
+h1,
+h2 {
+  color: #e6faff;
+}
+
+.skills-list li {
+  padding: 8px 0;
+}
+.skills-list{
+  font-size: 32px;
+}
+
+/* --- Project --- */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background-color: #1e1f24;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  /* height: 200px; */
+}
+
+.project-card img {
+  width: 100%;
+  /* height: 150px; */
+  aspect-ratio: 16 / 9;
+  /* <-- 新增這一行，設定長寬比 */
+  background-color: #12151b; /* 添加背景色填補空白區域 */
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* 額外建議：可以讓文字也置中，看起來更平衡 */
+.project-card div {
+  text-align: center;
+  font-size: 16px;
+}
+
+/* --- Contact --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  background-color: #00ddff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-container {
+  display: flex;
+  gap: 24px;
+}
+
+.contact-form-wrapper,
+.contact-info {
+  width: 400px;
+  flex: 1;
+}
+
+.contact-info {
+  text-align: left;
+}
+
+/* --- Footer --- */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #aaa;
+}
+
+/* --- Back to Top Button --- */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+
+  /* --- 尺寸設定 --- */
+  width: 100px;
+  /* 設定您希望的按鈕寬度 */
+  height: 100px;
+  /* 設定您希望的按鈕高度 */
+
+  /* --- 樣式調整 --- */
+  background-color: transparent;
+  /* 將背景設為透明 */
+  border: none;
+  border-radius: 50%;
+  /* 維持圓形 */
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+  padding: 0;
+  /* 清除內距 */
+  overflow: hidden;
+  /* 確保圖片不會超出圓形邊界 */
+}
+
+/* 針對按鈕內的圖片做設定 */
+#backToTop img {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Mobile Header (Hidden on Desktop) --- */
+.mobile-header {
+  display: none;
+  /* 桌面版預設隱藏 */
+}
+
+/* --- 自訂義的進入動畫 --- */
+
+/* 動畫元素的初始狀態 (透明、稍微向上移動) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  display: contents;
+  /* <-- 新增這一行魔法般的 CSS */
+}
+
+/* 當元素可見時要觸發的狀態 (完全不透明、回到原位) */
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ================================== */
+/* === 技能卡片樣式 === */
+/* ================================== */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.skill-card {
+  background: #1e1f24;
+  padding: 30px 20px;
+  border-radius: 12px;
+  border: 1px solid #2a2b30;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 221, 255, 0.15);
+  border-color: var(--primary-color);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.skill-card h3 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.skill-card p {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+/* ================================== */
+/* === 學習經歷優化樣式 === */
+/* ================================== */
+
+/* 讓 #project-exp 也使用相同樣式 */
+#edu,
+#project-exp {
+  padding: 40px 20px;
+}
+
+#edu h2,
+#project-exp h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+#edu p {
+  text-align: left;
+  width: 100%;
+  font-size: 15px;
+}
+
+.edu-section {
+  max-width: 900px;
+  margin: 0 auto 35px auto;
+  width: 90%;
+}
+
+.edu-section-title {
+  font-size: 1.3rem;
+  color: #00ddff;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 10px;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* 學歷卡片 */
+.education-card {
+  background: #1e1f24;
+  border-left: 4px solid var(--primary-color);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 221, 255, 0.1);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.education-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.education-date {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* 專案卡片 */
+.project-card-edu {
+  background: #1e1f24;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  border: 1px solid #2a2b30;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card-edu:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 221, 255, 0.1);
+}
+
+.project-card-edu h3 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
+.project-card-edu h4 {
+  color: #00ddff;
+  font-size: 1rem;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.project-card-edu p {
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: left;
+  width: 100%;
+  font-size: 15px;
+}
+
+/* ================================== */
+/* === RWD / 手機版樣式 (Mobile) === */
+/* ================================== */
+
+@media (max-width: 768px) {
+
+  h1 {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  /* --- Mobile Header (Visible on Mobile) --- */
+  .mobile-header {
+    display: flex;
+    /* 在手機上顯示 */
+    align-items: center;
+    justify-content: space-between;
+    /* 讓名字和漢堡選單左右對齊 */
+    background: #222;
+    color: #fff;
+    height: 56px;
+    padding: 0 16px;
+    /* 左右增加內距，避免貼邊 */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1200;
+  }
+
+  .mobile-header .logo {
+    font-size: 1.5rem;
+    /* 將字體從預設的 16px 放大到 20px (您可以改成任何想要的大小) */
+    font-weight: bold;
+    /* 也可以順便加粗，看起來更醒目 */
+  }
+
+  .menu-toggle {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* --- Sidebar (Mobile Dropdown Menu) --- */
+  .sidebar {
+    /* 把桌面版的 sidebar 樣式，變成手機版的下拉選單 */
+    background: #222;
+    width: 100%;
+    height: auto;
+    padding: 24px 0;
+    top: 56px;
+    /* 移到 header 下方 */
+    left: 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 16px 16px;
+    z-index: 1100;
+
+    /* 動畫設定 */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0s 0.3s;
+  }
+
+  .sidebar.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  }
+
+  .sidebar h2 {
+    display: none;
+    /* 手機版隱藏 "陳柏宇" 標題 */
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .avatar img {
+    object-position: center;
+    /* 讓頭像在手機上置中 */
+  }
+
+  #nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  #nav-list li {
+    width: 100%;
+    text-align: center;
+    margin: 16px 0;
+    /* 可以微調上下間距 */
+  }
+
+  /* --- Main Content (Mobile) --- */
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    /* 取消桌面版的左邊距 */
+    padding: 80px 20px 20px 20px;
+    /* 調整內距 (上/左右/下) */
+    height: auto;
+    /* 高度由內容決定 */
+    overflow-y: visible;
+    /* 恢復正常滾動 */
+    scroll-snap-type: none;
+    /* 關閉吸附 */
+  }
+
+  .section {
+    height: auto;
+    /* 高度由內容決定 */
+    min-height: 0;
+    /* 取消最小高度限制 */
+    padding: 20px 0;
+    /* 自行調整手機板的上下間距 */
+    margin-bottom: 40px;
+    /* 恢復區塊間的間距 */
+  }
+
+  /* --- Contact (Mobile) --- */
+  .contact-container {
+    flex-direction: column;
+    /* 從水平並排變為垂直堆疊 */
+  }
+
+  #backToTop {
+    position: fixed;
+    bottom: 10px;
+
+    /* --- 尺寸設定 --- */
+    width: 60px;
+    /* 設定您希望的按鈕寬度 */
+    height: 60px;
+    /* 設定您希望的按鈕高度 */
+  }
+
+  .item-meta {
+    width: 100%;
+    display: flex;
+    font-size: 9px;
+  }
+  /* 學習經歷手機版 */
+  #edu {
+    padding: 20px 10px;
+  }
+  
+  #edu h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .edu-section {
+    margin-bottom: 25px;
+  }
+  
+  .edu-section-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .education-title {
+    font-size: 1rem;
+  }
+  
+  .education-card {
+    padding: 14px 16px;
+  }
+  
+  .project-card-edu {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .project-card-edu h3 {
+    font-size: 1.1rem;
+  }
+  
+  .project-card-edu h4 {
+    font-size: 0.95rem;
+    margin-top: 12px;
+  }
+  
+  .project-card-edu p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  /* 技能卡片手機版 */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 10px;
+  }
+  
+  .skill-card {
+    padding: 24px 16px;
+  }
+  
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+  
+  .skill-card h3 {
+    font-size: 1.1rem;
+  }
+}
