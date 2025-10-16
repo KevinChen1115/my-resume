@@ -3,15 +3,15 @@
 /* =================================== */
 /* 定義顏色變數，方便統一管理和修改 */
 :root {
-  --primary-color: #e86100; /* 您 email 的橘色 */
-  --icon-bg-color: #495057; /* 圖示預設背景色 */
-  --icon-color: #ffffff;    /* 圖示本身的顏色 (白色) */
+  --primary-color: #e86100;
+  --icon-bg-color: #495057;
+  --icon-color: #ffffff;
 }
 
 .social-icons {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* 使用 gap 來控制間距 */
+  gap: 1.5rem;
 }
 
 .social-icon {
@@ -20,23 +20,19 @@
   justify-content: center;
   width: 5rem;
   height: 5rem;
-  /* background-color: var(--icon-bg-color); */
   color: var(--icon-color);
-  border-radius: 50%; /* 製作完美圓形的標準寫法 */
+  border-radius: 50%;
   font-size: 1.5rem;
-  text-decoration: none; /* 確保連結沒有底線 */
+  text-decoration: none;
   margin-top: 5rem;
-  
-  /* 加上平滑的過渡效果 */
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-icon:hover,
 .social-icon:focus {
-  /* background-color: var(--primary-color); */
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  outline: none; /* 移除 focus 時瀏覽器預設的藍色外框，因為我們已經自訂了效果 */
+  outline: none;
 }
 
 *,
@@ -45,10 +41,8 @@
   box-sizing: border-box;
 }
 
-/* --- 新增：平滑滾動與吸附效果 --- */
 html {
   scroll-behavior: smooth;
-  /* 讓錨點連結的跳轉是平滑滾動 */
 }
 
 body {
@@ -139,7 +133,6 @@ section table th {
   border: 2px solid white;
   display: block;
   margin: 200px auto 30px auto;
-  /* 使用 margin auto 水平置中並增加下方間距 */
   overflow: hidden;
 }
 
@@ -153,33 +146,21 @@ section table th {
 .main-content {
   margin-left: 220px;
   width: calc(100% - 220px);
-  /* padding: 40px; 因為 padding 會加到各個 section 裡 */
   height: 100vh;
-  /* 讓主內容區跟螢幕一樣高 */
   overflow-y: scroll;
-  /* 允許垂直滾動 */
   scroll-snap-type: y mandatory;
-  /* 垂直方向(y軸)強制吸附 */
 }
 
 .section {
-  /* margin-bottom: 80px; 一個section一頁所以不需要 */
   height: 100vh;
-  /* 設定區塊高度為螢幕的100% */
   min-height: 650px;
-  /* 最小高度，避免內容在矮螢幕被擠壓 */
   width: 100%;
-  /* 確保 section 寬度填滿 main-content */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* 垂直置中內容 */
   align-items: center;
-  /* 水平置中內容 */
   box-sizing: border-box;
-  /* 確保 padding 不會影響總高度 */
   scroll-snap-align: start;
-  /* 每個 section 的頂部作為吸附對齊點 */
 }
 
 h1,
@@ -190,7 +171,8 @@ h2 {
 .skills-list li {
   padding: 8px 0;
 }
-.skills-list{
+
+.skills-list {
   font-size: 32px;
 }
 
@@ -211,63 +193,73 @@ h2 {
   flex-direction: column;
   gap: 15px;
   align-items: center;
-  /* height: 200px; */
 }
 
 .project-card img {
   width: 100%;
-  /* height: 150px; */
   aspect-ratio: 16 / 9;
-  /* <-- 新增這一行，設定長寬比 */
-  background-color: #12151b; /* 添加背景色填補空白區域 */
+  background-color: #12151b;
   object-fit: contain;
   border-radius: 8px;
 }
 
-/* 額外建議：可以讓文字也置中，看起來更平衡 */
 .project-card div {
   text-align: center;
   font-size: 16px;
 }
 
 /* --- Contact --- */
-form {
+.contact-info-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-item {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 400px;
+  align-items: center;
+  gap: 20px;
+  background: #1e1f24;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #2a2b30;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-input,
-textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 221, 255, 0.15);
 }
 
-button {
-  padding: 10px;
-  background-color: #00ddff;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+.contact-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
 }
 
-.contact-container {
-  display: flex;
-  gap: 24px;
+.contact-item h3 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  margin-top: 0;
 }
 
-.contact-form-wrapper,
-.contact-info {
-  width: 400px;
-  flex: 1;
+.contact-item p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
-.contact-info {
-  text-align: left;
+.contact-item a {
+  color: #00ddff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-item a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 /* --- Footer --- */
@@ -282,30 +274,19 @@ button {
   position: fixed;
   bottom: 20px;
   right: 10px;
-
-  /* --- 尺寸設定 --- */
   width: 100px;
-  /* 設定您希望的按鈕寬度 */
   height: 100px;
-  /* 設定您希望的按鈕高度 */
-
-  /* --- 樣式調整 --- */
   background-color: transparent;
-  /* 將背景設為透明 */
   border: none;
   border-radius: 50%;
-  /* 維持圓形 */
   cursor: pointer;
   display: none;
   z-index: 999;
   transition: opacity 0.3s ease;
   padding: 0;
-  /* 清除內距 */
   overflow: hidden;
-  /* 確保圖片不會超出圓形邊界 */
 }
 
-/* 針對按鈕內的圖片做設定 */
 #backToTop img {
   width: 100%;
   height: 100%;
@@ -314,29 +295,24 @@ button {
 /* --- Mobile Header (Hidden on Desktop) --- */
 .mobile-header {
   display: none;
-  /* 桌面版預設隱藏 */
 }
 
 /* --- 自訂義的進入動畫 --- */
-
-/* 動畫元素的初始狀態 (透明、稍微向上移動) */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   display: contents;
-  /* <-- 新增這一行魔法般的 CSS */
 }
 
-/* 當元素可見時要觸發的狀態 (完全不透明、回到原位) */
 .fade-up.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 /* ================================== */
 /* === 技能卡片樣式 === */
 /* ================================== */
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -378,11 +354,10 @@ button {
   line-height: 1.5;
   margin: 0;
 }
+
 /* ================================== */
 /* === 學習經歷優化樣式 === */
 /* ================================== */
-
-/* 讓 #project-exp 也使用相同樣式 */
 #edu,
 #project-exp {
   padding: 40px 20px;
@@ -487,14 +462,34 @@ button {
   font-size: 15px;
 }
 
+/* 測試帳號樣式 */
+.test-account {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(0, 221, 255, 0.1);
+  border-left: 3px solid var(--primary-color);
+  border-radius: 6px;
+}
 
+.test-account p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.test-account code {
+  background: #2a2b30;
+  color: #00ddff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+}
 
 /* ================================== */
 /* === RWD / 手機版樣式 (Mobile) === */
 /* ================================== */
-
 @media (max-width: 768px) {
-
   h1 {
     text-align: center;
     font-size: 2rem;
@@ -512,7 +507,7 @@ button {
     flex-direction: column;
   }
 
-  /* --- Mobile Header (Visible on Mobile) --- */
+  /* --- Mobile Header --- */
   .mobile-header {
     display: flex;
     align-items: center;
@@ -541,7 +536,7 @@ button {
     cursor: pointer;
   }
 
-  /* --- Sidebar (Mobile Dropdown Menu) --- */
+  /* --- Sidebar --- */
   .sidebar {
     background: #222;
     width: 100%;
@@ -594,7 +589,7 @@ button {
     margin: 16px 0;
   }
 
-  /* --- Main Content (Mobile) --- */
+  /* --- Main Content --- */
   .main-content {
     width: 100%;
     margin-left: 0;
@@ -611,7 +606,7 @@ button {
     margin-bottom: 40px;
   }
 
-  /* 關於我區塊 */
+  /* 關於我 */
   #about p {
     width: 100%;
     font-size: 16px;
@@ -643,7 +638,7 @@ button {
     border-radius: 8px;
   }
 
-  /* 技能卡片手機版 */
+  /* 技能卡片 */
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -662,7 +657,7 @@ button {
     font-size: 1.1rem;
   }
 
-  /* 學習經歷手機版 */
+  /* 學習經歷 */
   #edu {
     padding: 20px 10px;
   }
@@ -694,7 +689,7 @@ button {
     padding: 14px 16px;
   }
 
-  /* 專案經驗手機版 */
+  /* 專案經驗 */
   #project-exp {
     padding: 20px 10px;
   }
@@ -722,7 +717,7 @@ button {
     line-height: 1.5;
   }
 
-  /* 工作經驗手機版 */
+  /* 工作經驗 */
   #exp p {
     font-size: 14px;
     text-align: center;
@@ -737,7 +732,7 @@ button {
     text-align: center;
   }
 
-  /* 作品集手機版 */
+  /* 作品集 */
   .project-list {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -761,7 +756,7 @@ button {
     aspect-ratio: 16 / 9;
   }
 
-  /* 測試帳號手機版 */
+  /* 測試帳號 */
   .test-account {
     margin-top: 12px;
     padding: 10px;
@@ -777,60 +772,32 @@ button {
     padding: 2px 6px;
   }
 
-  /* --- Contact (Mobile) --- */
+  /* 聯絡 */
   #contact {
     padding: 20px 10px;
   }
 
-  .contact-container {
+  .contact-info-center {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .contact-item {
+    padding: 16px;
     flex-direction: column;
-    padding: 0 10px;
+    text-align: center;
   }
 
-  .contact-form-wrapper,
-  .contact-info {
-    width: 100%;
+  .contact-icon {
+    font-size: 2rem;
   }
 
-  form {
-    width: 100%;
-  }
-
-  input,
-  textarea {
-    font-size: 16px;
-  }
-
-  /* 回到頂端按鈕 */
+  /* 回到頂端 */
   #backToTop {
     position: fixed;
     bottom: 10px;
     width: 60px;
     height: 60px;
   }
-
-}
-
-/* 測試帳號樣式 */
-.test-account {
-  margin-top: 16px;
-  padding: 12px;
-  background: rgba(0, 221, 255, 0.1);
-  border-left: 3px solid var(--primary-color);
-  border-radius: 6px;
-}
-
-.test-account p {
-  margin: 4px 0;
-  font-size: 0.9rem;
-  color: #ddd;
-}
-
-.test-account code {
-  background: #2a2b30;
-  color: #00ddff;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.95rem;
 }
