@@ -9,7 +9,17 @@
   <link rel="icon" type="image/png" href="img/dog1-modified.png">
 </head>
 
+
 <body>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">❮</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="">
+    </div>
+    <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">❯</button>
+  </div>
 
   <header class="mobile-header">
     <span class="logo">Kevin</span>
@@ -31,6 +41,7 @@
           <li><a href="#project-exp">專案經驗</a></li> <!-- 新增這行 -->
           <li><a href="#exp">工作經驗</a></li>
           <li><a href="#projects">作品集</a></li>
+          <li><a href="#photo">Photo</a></li> <!-- 新增這行 -->
           <li><a href="#contact">聯絡</a></li>
         </ul>
       </nav>
@@ -115,17 +126,19 @@
 
             <div class="education-card">
               <div class="education-header">
-                <span class="education-title">亞東科技大學 資訊管理系</span>
-                <span class="education-date">108年 09月 — 112年 06月</span>
+                <span class="education-title">Java養成班 (文大推廣 x 程式驅動)</span>
+                <span class="education-date">114年 06月 — 114年 10月</span>
               </div>
             </div>
 
             <div class="education-card">
               <div class="education-header">
-                <span class="education-title">Java養成班 (文大推廣 x 程式驅動)</span>
-                <span class="education-date">114年 06月 — 114年 10月</span>
+                <span class="education-title">亞東科技大學 資訊管理系</span>
+                <span class="education-date">108年 09月 — 112年 06月</span>
               </div>
             </div>
+
+
           </div>
         </div>
       </section>
@@ -134,12 +147,6 @@
           <h2>專案經驗</h2>
 
           <div class="edu-section">
-            <div class="project-card-edu">
-              <h3>餐廳訂位系統 (後端)</h3>
-              <p>完整的註冊與登入流程，整合 Spring Security 進行 BCrypt 密碼加密，並透過 Spring Data JPA 與 MySQL 進行資料持久化。同時，使用 HttpSession
-                管理使用者登入狀態，並以 Thymeleaf 進行伺服器端頁面渲染。</p>
-            </div>
-
             <div class="project-card-edu">
               <h3>胃旅圖 (組長 & PM)</h3>
 
@@ -155,9 +162,16 @@
               <p>採用敏捷開發模式，將一個月的時程拆解為明確的週衝刺計畫。主導關鍵技術決策（如選擇 PWA 而非原生 App、選擇 Dialogflow 而非 LLM），有效降低專案風險。每日追蹤進度，識別瓶頸，確保 MVP
                 能在時限內高品質交付。</p>
             </div>
+            <div class="project-card-edu">
+              <h3>餐廳訂位系統 (後端)</h3>
+              <p>完整的註冊與登入流程，整合 Spring Security 進行 BCrypt 密碼加密，並透過 Spring Data JPA 與 MySQL 進行資料持久化。同時，使用 HttpSession
+                管理使用者登入狀態，並以 Thymeleaf 進行伺服器端頁面渲染。</p>
+            </div>
+
+
           </div>
         </div>
-      </section>F
+      </section>
 
       <section id="exp" class="section">
         <div class="fade-up">
@@ -177,6 +191,19 @@
           <h2>作品集</h2>
           <div class="project-list">
             <div class="project-card">
+              <img src="img/logo.png" alt="專案圖片" />
+              <div><a
+                  href="https://docs.google.com/presentation/d/1aa55IYsTiiE10vhd2EsHH0NFj6RMZ7Gl/edit?usp=sharing&ouid=103430362942245549640&rtpof=true&sd=true">
+                  <h3>胃旅圖 (點我)</h3>
+                  <p>「胃旅圖」是一款結合PWA與AR技術的創新遊戲化平台，並導入AI做為逛夜市時的小幫手，專為夜市數位轉型而設計。
+
+                    遊客透過手機掃描QR Code進行解謎，與攤位環境產生趣味互動，並收集獨特的數位徽章作為紀念。
+
+                    我們的核心使命是將逛夜市的習慣，透過互動遊戲與數據統計的營運模式，為觀光產業的數位轉型提供創新解決方案，同時創造遊客、店家與商圈管理者的三贏局面。</p>
+              </div>
+              </a>
+            </div>
+            <div class="project-card">
               <img src="img/Login1.png" alt="專案圖片" />
               <div>
                 <a href="https://resbooking.ddns.net">
@@ -192,24 +219,53 @@
                   <p>密碼：<code>000000</code></p>
                 </div>
               </div>
-
             </div>
-            <div class="project-card">
-              <img src="img/logo.png" alt="專案圖片" />
-              <div><a
-                  href="https://docs.google.com/presentation/d/1aa55IYsTiiE10vhd2EsHH0NFj6RMZ7Gl/edit?usp=sharing&ouid=103430362942245549640&rtpof=true&sd=true">
-                  <h3>胃旅圖 (點我)</h3>
-                  <p>「胃旅圖」是一款結合PWA與AR技術的創新遊戲化平台，並導入AI做為逛夜市時的小幫手，專為夜市數位轉型而設計。
 
-                    遊客透過手機掃描QR Code進行解謎，與攤位環境產生趣味互動，並收集獨特的數位徽章作為紀念。
-
-                    我們的核心使命是將逛夜市的習慣，透過互動遊戲與數據統計的營運模式，為觀光產業的數位轉型提供創新解決方案，同時創造遊客、店家與商圈管理者的三贏局面。</p>
-              </div>
-              </a>
-            </div>
           </div>
         </div>
       </section>
+
+      <section id="photo" class="section">
+        <div class="fade-up">
+          <h2>Photo</h2>
+          <h3>點擊圖片可以放大</h3>
+          <div class="photo-carousel">
+            <!-- 左箭頭 -->
+            <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+
+            <!-- 照片容器 -->
+            <div class="carousel-container">
+              <div class="carousel-track" id="carouselTrack">
+                <div class="photo-slide">
+                  <img src="img/seminar.png" alt="照片 1">
+                </div>
+                <div class="photo-slide">
+                  <img src="img/product1.jpg" alt="照片 2">
+                </div>
+                <div class="photo-slide">
+                  <img src="img/team.jpg" alt="照片 3">
+                </div>
+                <div class="photo-slide">
+                  <img src="img/product.jpg" alt="照片 4">
+                </div>
+                <div class="photo-slide">
+                  <img src="img/seminar1.png" alt="照片 5">
+                </div>
+                <div class="photo-slide">
+                  <img src="img/product.jpg" alt="照片 6">
+                </div>
+              </div>
+            </div>
+
+            <!-- 右箭頭 -->
+            <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+          </div>
+
+          <!-- 指示點 -->
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+      </section>
+
 
       <section id="contact" class="section">
         <div class="fade-up">

@@ -485,7 +485,240 @@ h2 {
   font-family: 'Courier New', monospace;
   font-size: 0.95rem;
 }
+/* ================================== */
+/* === Photo Carousel 輪播照片 === */
+/* ================================== */
 
+.photo-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.carousel-container {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.photo-slide {
+  min-width: calc(33.333% - 13.333px);
+  margin: 0 6.667px;
+  background: #1e1f24;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #2a2b30;
+}
+
+.photo-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;  /* 改成 contain，照片不會被裁切 */
+  aspect-ratio: 4 / 3;
+  background: #12151b;  /* 加上背景色填補空白 */
+  cursor: pointer;  /* 滑鼠移上去變成手指，提示可以點擊 */
+  transition: transform 0.3s ease;
+}
+
+.photo-slide img:hover {
+  transform: scale(1.05);  /* 滑鼠移上去放大一點點 */
+}
+
+
+/* 箭頭按鈕 */
+.carousel-btn {
+  background: rgba(0, 221, 255, 0.2);
+  color: #00ddff;
+  border: 2px solid #00ddff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+/* 指示點 */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2a2b30;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--primary-color);
+  transform: scale(1.3);
+}
+
+.dot:hover {
+  background: #00ddff;
+}
+
+/* ================================== */
+/* === Lightbox 照片放大顯示 === */
+/* ================================== */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;  /* 改用 vw 單位 */
+  max-height: 90vh; /* 改用 vh 單位 */
+  display: flex;     /* 新增 */
+  align-items: center; /* 新增 */
+  justify-content: center; /* 新增 */
+}
+
+.lightbox-content img {
+  max-width: 100%;   /* 保持 */
+  max-height: 90vh;  /* 改成 vh，與容器一致 */
+  width: auto;       /* 新增：讓寬度自動調整 */
+  height: auto;      /* 新增：讓高度自動調整 */
+  object-fit: contain; /* 保持 */
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(0, 221, 255, 0.3);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+  background: #00ddff;
+  transform: rotate(90deg);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 221, 255, 0.3);
+  color: #00ddff;
+  border: 2px solid #00ddff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.lightbox-nav:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 手機版調整 */
+@media (max-width: 768px) {
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .lightbox-prev {
+    left: 10px;
+  }
+  
+  .lightbox-next {
+    right: 10px;
+  }
+}
 /* ================================== */
 /* === RWD / 手機版樣式 (Mobile) === */
 /* ================================== */
@@ -799,5 +1032,37 @@ h2 {
     bottom: 10px;
     width: 60px;
     height: 60px;
+  }
+  /* Photo Carousel 手機版 */
+  .photo-carousel {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .photo-slide {
+    min-width: 100%;
+    margin: 0;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  .carousel-dots {
+    margin-top: 20px;
   }
 }
