@@ -21,11 +21,18 @@
   width: 5rem;
   height: 5rem;
   color: var(--icon-color);
+  background-color: var(--icon-bg-color);
   border-radius: 50%;
   font-size: 1.5rem;
   text-decoration: none;
   margin-top: 5rem;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon img {
+  width: 52%;
+  height: 52%;
+  object-fit: contain;
 }
 
 .social-icon:hover,
@@ -61,10 +68,36 @@ a {
   text-decoration: none;
 }
 
-#about p {
+.about-copy {
+  max-width: 40rem;
+  width: min(100%, 40rem);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  text-align: left;
+}
+
+.about-copy h1 {
   text-align: center;
-  width: 80%;
-  font-size: 20px;
+  margin: 0 0 1.5rem;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.about-copy p {
+  margin: 0 0 1.2rem;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: #e4e4e4;
+  text-wrap: pretty;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.about-copy strong {
+  font-weight: 600;
+  color: #f0f4f5;
 }
 
 #edu p {
@@ -177,11 +210,19 @@ h2 {
 }
 
 /* --- Project --- */
+#projects h2 {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
-  margin-top: 20px;
+  margin-top: 0;
+  width: min(100%, 56rem);
+  padding: 0 1.25rem;
 }
 
 .project-card {
@@ -191,11 +232,11 @@ h2 {
   box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 15px;
   align-items: center;
+  gap: 15px;
 }
 
-.project-card img {
+.project-card > img {
   width: 100%;
   aspect-ratio: 16 / 9;
   background-color: #12151b;
@@ -203,9 +244,102 @@ h2 {
   border-radius: 8px;
 }
 
-.project-card div {
-  text-align: center;
-  font-size: 16px;
+.project-card--featured {
+  border: 1px solid rgba(0, 221, 255, 0.35);
+  box-shadow: 0 0 24px rgba(0, 221, 255, 0.12);
+}
+
+.project-card-body {
+  width: 100%;
+  text-align: left;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.project-card-body h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.2rem;
+  color: #e6faff;
+  line-height: 1.35;
+}
+
+.project-slug {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 0.82em;
+  color: #00ddff;
+}
+
+.project-note {
+  margin: 0 0 0.4rem;
+  font-size: 0.8125rem;
+  color: #888;
+  letter-spacing: 0.02em;
+}
+
+.project-links {
+  margin: 0 0 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tag-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 221, 255, 0.45);
+  color: #00ddff;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.project-tag-link:hover,
+.project-tag-link:focus {
+  background: rgba(0, 221, 255, 0.12);
+  border-color: #00ddff;
+  color: #b8f4ff;
+  outline: none;
+}
+
+.project-card--featured .project-tag-link {
+  border-color: rgba(0, 221, 255, 0.55);
+}
+
+.project-lead {
+  margin: 0 0 0.85rem;
+  color: #cfcfcf;
+}
+
+.project-points {
+  margin: 0;
+  padding-left: 1.15rem;
+  list-style-type: disc;
+}
+
+.project-points li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+  color: #c8c8c8;
+}
+
+.project-points li:last-child {
+  margin-bottom: 0;
+}
+
+.project-k {
+  display: inline-block;
+  min-width: 5.25rem;
+  margin-right: 0;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.project-k::after {
+  content: '：';
 }
 
 /* --- Contact --- */
@@ -311,15 +445,26 @@ h2 {
 }
 
 /* ================================== */
-/* === 技能卡片樣式 === */
+/* === 技能（卡片，內容為 side project 技術）=== */
 /* ================================== */
+.skills-wrap {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  padding: 0 1.25rem 1.5rem;
+}
+
+#skills h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
-  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
 }
 
 .skill-card {
@@ -340,6 +485,7 @@ h2 {
 .skill-icon {
   font-size: 3rem;
   margin-bottom: 16px;
+  line-height: 1;
 }
 
 .skill-card h3 {
@@ -353,18 +499,17 @@ h2 {
   font-size: 0.95rem;
   line-height: 1.5;
   margin: 0;
+  text-align: center;
 }
 
 /* ================================== */
 /* === 學習經歷優化樣式 === */
 /* ================================== */
-#edu,
-#project-exp {
+#edu {
   padding: 40px 20px;
 }
 
-#edu h2,
-#project-exp h2 {
+#edu h2 {
   text-align: center;
   margin-bottom: 30px;
   font-size: 2.5rem;
@@ -425,66 +570,6 @@ h2 {
   font-size: 0.9rem;
 }
 
-/* 專案卡片 */
-.project-card-edu {
-  background: #1e1f24;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  border: 1px solid #2a2b30;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card-edu:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 221, 255, 0.1);
-}
-
-.project-card-edu h3 {
-  color: var(--primary-color);
-  font-size: 1.2rem;
-  margin-bottom: 14px;
-}
-
-.project-card-edu h4 {
-  color: #00ddff;
-  font-size: 1rem;
-  margin-top: 16px;
-  margin-bottom: 8px;
-}
-
-.project-card-edu p {
-  color: #ddd;
-  line-height: 1.6;
-  margin-bottom: 10px;
-  text-align: left;
-  width: 100%;
-  font-size: 15px;
-}
-
-/* 測試帳號樣式 */
-.test-account {
-  margin-top: 16px;
-  padding: 12px;
-  background: rgba(0, 221, 255, 0.1);
-  border-left: 3px solid var(--primary-color);
-  border-radius: 6px;
-}
-
-.test-account p {
-  margin: 4px 0;
-  font-size: 0.9rem;
-  color: #ddd;
-}
-
-.test-account code {
-  background: #2a2b30;
-  color: #00ddff;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.95rem;
-}
 /* ================================== */
 /* === Photo Carousel 輪播照片 === */
 /* ================================== */
@@ -840,14 +925,19 @@ h2 {
   }
 
   /* 關於我 */
-  #about p {
-    width: 100%;
-    font-size: 16px;
-    padding: 0 10px;
+  .about-copy {
+    padding: 0 1rem;
   }
 
-  #about h1 {
+  .about-copy h1 {
     font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-copy p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
   }
 
   /* 社群圖示 */
@@ -865,17 +955,23 @@ h2 {
   }
 
   .social-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+    width: 52%;
+    height: 52%;
+    object-fit: contain;
   }
 
   /* 技能卡片 */
+  #skills h2 {
+    font-size: 1.85rem;
+  }
+
+  .skills-wrap {
+    padding: 0 0.75rem 1rem;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 10px;
   }
 
   .skill-card {
@@ -922,34 +1018,6 @@ h2 {
     padding: 14px 16px;
   }
 
-  /* 專案經驗 */
-  #project-exp {
-    padding: 20px 10px;
-  }
-
-  #project-exp h2 {
-    font-size: 1.8rem;
-  }
-
-  .project-card-edu {
-    padding: 16px;
-    margin-bottom: 20px;
-  }
-
-  .project-card-edu h3 {
-    font-size: 1.1rem;
-  }
-
-  .project-card-edu h4 {
-    font-size: 0.95rem;
-    margin-top: 12px;
-  }
-
-  .project-card-edu p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
   /* 工作經驗 */
   #exp p {
     font-size: 14px;
@@ -980,29 +1048,29 @@ h2 {
     font-size: 1.2rem;
   }
 
-  .project-card p {
-    font-size: 14px;
-    line-height: 1.5;
+  .project-card-body {
+    font-size: 0.875rem;
+    line-height: 1.6;
   }
 
-  .project-card img {
+  .project-card-body h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-lead {
+    margin-bottom: 0.65rem;
+  }
+
+  .project-points li {
+    margin-bottom: 0.4rem;
+  }
+
+  .project-k {
+    min-width: 4.75rem;
+  }
+
+  .project-card > img {
     aspect-ratio: 16 / 9;
-  }
-
-  /* 測試帳號 */
-  .test-account {
-    margin-top: 12px;
-    padding: 10px;
-  }
-
-  .test-account p {
-    font-size: 0.85rem;
-    text-align: left;
-  }
-
-  .test-account code {
-    font-size: 0.85rem;
-    padding: 2px 6px;
   }
 
   /* 聯絡 */

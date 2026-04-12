@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>履歷</title>
+  <title>Kevin — 履歷</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="img/dog1-modified.png">
 </head>
@@ -29,7 +29,7 @@
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="avatar">
-        <img src="./img/resumephoto.jpg " alt="大頭貼">
+        <img src="./img/resumephoto.jpg" alt="大頭貼">
         <a href="#about"></a>
       </div>
       <h2>Kevin</h2>
@@ -38,10 +38,9 @@
           <li><a href="#about">關於我</a></li>
           <li><a href="#skills">技能</a></li>
           <li><a href="#edu">學習經歷</a></li>
-          <li><a href="#project-exp">專案經驗</a></li> <!-- 新增這行 -->
           <li><a href="#exp">工作經驗</a></li>
           <li><a href="#projects">作品集</a></li>
-          <li><a href="#photo">Photo</a></li> <!-- 新增這行 -->
+          <li><a href="#photo">Photo</a></li>
           <li><a href="#contact">聯絡</a></li>
         </ul>
       </nav>
@@ -51,16 +50,23 @@
 
       <section id="about" class="section">
         <div class="fade-up">
-          <h1>我是Kevin</h1>
-          <p>
-            畢業於亞東科大資管系，日前已從 Java 工程師養成班結訓。
-            課程中熟悉了 <strong>Java 物件導向、Spring Boot 框架、MySQL 資料庫操作</strong>，
-            以及 Git / Linux 的使用和協作流程。
-            在專案中累積了<strong>前後端整合開發經驗</strong>（React + Spring Boot），
-            也習慣搭配 AI 工具來提升效率、解決問題。
-            希望未來能把這些學到的東西實際用在工作上，為團隊帶來價值，
-            <strong>成為一位能獨立開發與團隊協作的全端工程師</strong>。
-          </p>
+          <div class="about-copy">
+            <h1>我是Kevin</h1>
+            <p>
+              畢業於亞東科大資管系，日前已從 Java 工程師養成班結訓。課程中熟悉了
+              <strong>Java 物件導向、Spring Boot 框架、MySQL 資料庫操作</strong>，以及 Git / Linux 的使用和協作流程。
+            </p>
+            <p>
+              另以 side project「AI 技術情報筆記機器人」延伸實作
+              <strong>Java、Spring Boot、PostgreSQL（Data JPA）</strong>，並整合
+              <strong>LangChain4j、Gemini</strong> 與 Discord 推播、<strong>Docker</strong> 及
+              <strong>AWS（EC2／RDS）</strong> 部署；平時亦善用 AI 工具輔助開發與除錯。
+            </p>
+            <p>
+              希望未來能把這些學到的東西實際用在工作上，為團隊帶來價值，
+              <strong>成為一位能獨立開發與團隊協作的後端工程師</strong>。
+            </p>
+          </div>
         </div>
         <div class="social-icons">
           <!-- <a href="#" class="social-icon" aria-label="查看我的 LinkedIn 個人檔案" target="_blank" rel="noopener noreferrer">
@@ -69,50 +75,42 @@
           <a href="#" class="social-icon" aria-label="查看我的 GitHub" target="_blank" rel="noopener noreferrer">
             <img src="img/github.png" alt="GitHub">
           </a> -->
-          <a href="#projects" class="social-icon" aria-label="查看我的作品集">
-            <img src="img/logo.png" alt="胃旅圖">
+          <a href="#projects" class="social-icon" aria-label="前往作品集（含 GitHub 專案）">
+            <img src="img/github.png" alt="">
           </a>
         </div>
       </section>
 
       <section id="skills" class="section">
         <div class="fade-up">
-          <h2>技能</h2>
-          <div class="skills-grid">
-            <div class="skill-card">
-              <div class="skill-icon">☕</div>
-              <h3>後端</h3>
-              <p>Java, Spring Boot, Spring MVC, Spring Data JPA, Spring Security</p>
-            </div>
-
-            <div class="skill-card">
-              <div class="skill-icon">🌐</div>
-              <h3>前端</h3>
-              <p>HTML, CSS, JavaScript, React</p>
-            </div>
-
-            <div class="skill-card">
-              <div class="skill-icon">💾</div>
-              <h3>資料庫</h3>
-              <p>MySQL, MariaDB</p>
-            </div>
-
-            <div class="skill-card">
-              <div class="skill-icon">📦</div>
-              <h3>版本控制</h3>
-              <p>Git, GitHub</p>
-            </div>
-
-            <div class="skill-card">
-              <div class="skill-icon">🐧</div>
-              <h3>系統管理</h3>
-              <p>Linux, Docker</p>
-            </div>
-
-            <div class="skill-card">
-              <div class="skill-icon">🔧</div>
-              <h3>其他</h3>
-              <p>Thymeleaf</p>
+          <div class="skills-wrap">
+            <h2>技能</h2>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-icon">☕</div>
+                <h3>後端</h3>
+                <p>Java、Spring Boot</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">🖥️</div>
+                <h3>系統</h3>
+                <p>Linux</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">💾</div>
+                <h3>資料庫</h3>
+                <p>PostgreSQL、Data JPA、MySQL</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">🐧</div>
+                <h3>部署</h3>
+                <p>Docker、AWS EC2／RDS</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon">📦</div>
+                <h3>版本控制</h3>
+                <p>Git、GitHub</p>
+              </div>
             </div>
           </div>
         </div>
@@ -142,36 +140,6 @@
           </div>
         </div>
       </section>
-      <section id="project-exp" class="section">
-        <div class="fade-up">
-          <h2>專案經驗</h2>
-
-          <div class="edu-section">
-            <div class="project-card-edu">
-              <h3>胃旅圖 (組長 & PM)</h3>
-
-              <h4>策略性產品轉向 (Strategic Pivot)</h4>
-              <p>基於競賽主題與市場機會分析，成功主導團隊將專案方向從個人健康 App，轉型為「饒河夜市」量身打造的 B2C/B2B 智慧觀光解決方案，確立了以「遊戲化體驗獲取數據，以數據服務賦能商圈」的核心商業模式。
-              </p>
-
-              <h4>產品規格定義 (Full-Stack Specification)</h4>
-              <p>提出 React PWA + Spring Boot 技術架構方案。產出驅動開發的文件，包含：使用者流程圖 (User Flow)、前後端 RESTful API 規格書、資料庫結構 (Database
-                Schema)。</p>
-
-              <h4>敏捷開發與風險管理 (Agile & Risk Management)</h4>
-              <p>採用敏捷開發模式，將一個月的時程拆解為明確的週衝刺計畫。主導關鍵技術決策（如選擇 PWA 而非原生 App、選擇 Dialogflow 而非 LLM），有效降低專案風險。每日追蹤進度，識別瓶頸，確保 MVP
-                能在時限內高品質交付。</p>
-            </div>
-            <div class="project-card-edu">
-              <h3>餐廳訂位系統 (後端)</h3>
-              <p>完整的註冊與登入流程，整合 Spring Security 進行 BCrypt 密碼加密，並透過 Spring Data JPA 與 MySQL 進行資料持久化。同時，使用 HttpSession
-                管理使用者登入狀態，並以 Thymeleaf 進行伺服器端頁面渲染。</p>
-            </div>
-
-
-          </div>
-        </div>
-      </section>
 
       <section id="exp" class="section">
         <div class="fade-up">
@@ -190,37 +158,46 @@
         <div class="fade-up">
           <h2>作品集</h2>
           <div class="project-list">
-            <div class="project-card">
-              <img src="img/logo.png" alt="專案圖片" />
-              <div><a
-                  href="https://docs.google.com/presentation/d/1aa55IYsTiiE10vhd2EsHH0NFj6RMZ7Gl/edit?usp=sharing&ouid=103430362942245549640&rtpof=true&sd=true">
-                  <h3>胃旅圖 (點我)</h3>
-                  <p>「胃旅圖」是一款結合PWA與AR技術的創新遊戲化平台，並導入AI做為逛夜市時的小幫手，專為夜市數位轉型而設計。
-
-                    遊客透過手機掃描QR Code進行解謎，與攤位環境產生趣味互動，並收集獨特的數位徽章作為紀念。
-
-                    我們的核心使命是升級夜市的體驗，透過互動遊戲與數據統計的營運模式，為觀光產業的數位轉型提供創新解決方案，同時創造遊客、店家與商圈管理者的三贏局面。</p>
-              </div>
-              </a>
-            </div>
-            <div class="project-card">
-              <img src="img/Login1.png" alt="專案圖片" />
-              <div>
-                <a href="https://resbooking.ddns.net">
-                  <h3>餐廳訂位系統 (點我)</h3>
-                  <p>實作完整的註冊與登入流程，整合 Spring Security 進行 BCrypt 密碼加密，並透過 Spring Data JPA 與 MySQL 進行資料持久化。同時，使用
-                    HttpSession
-                    管理使用者登入狀態，並以 Thymeleaf 進行伺服器端頁面渲染。</p>
-                </a>
-                <!-- 新增測試帳號區塊 -->
-                <div class="test-account">
-                  <p><strong>🔑 測試帳號</strong></p>
-                  <p>帳號：<code>kevin1</code></p>
-                  <p>密碼：<code>000000</code></p>
-                </div>
+            <div class="project-card project-card--featured">
+              <img src="img/github.png" alt="ai-tech-notes" />
+              <div class="project-card-body">
+                <h3>AI 技術情報筆記機器人 <span class="project-slug">ai-tech-notes</span></h3>
+                <p class="project-note"> side project</p>
+                <p class="project-links">
+                  <a class="project-tag-link" href="https://github.com/KevinChen1115/ai-tech-notes" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
+                </p>
+                <p class="project-lead">
+                  每日自動抓取技術社群熱門文章，以 AI 過濾並產出繁中摘要，再經 Discord 推送到個人學習頻道。
+                </p>
+                <ul class="project-points">
+                  <li><span class="project-k">為什麼做</span>轉職後資訊量大，希望由 AI 篩選值得閱讀的內容並濃縮成摘要。</li>
+                  <li><span class="project-k">架構</span>Collector／Processor／Notifier 三層，單一職責；日後可替換資料來源（例如 Reddit）或通知管道。</li>
+                  <li><span class="project-k">實作重點</span>含 Docker、AWS（EC2 + RDS）與 TDD／多層次測試。</li>
+                  <li><span class="project-k">文件</span>README 含環境變數、本機啟動與手動觸發 API 說明。</li>
+                </ul>
               </div>
             </div>
-
+            <div class="project-card">
+              <img src="img/logo.png" alt="胃旅圖" />
+              <div class="project-card-body">
+                <h3>胃旅圖 <span class="project-slug">培訓班／PM</span></h3>
+                <p class="project-note">提案簡報</p>
+                <p class="project-links">
+                  <a class="project-tag-link"
+                    href="https://docs.google.com/presentation/d/1aa55IYsTiiE10vhd2EsHH0NFj6RMZ7Gl/edit?usp=sharing&ouid=103430362942245549640&rtpof=true&sd=true"
+                    target="_blank" rel="noopener noreferrer">Google Slides</a>
+                </p>
+                <p class="project-lead">
+                  以夜市觀光為主題，結合遊戲化與數據營運想像的產品提案。
+                </p>
+                <ul class="project-points">
+                  <li><span class="project-k">角色</span>組長與 PM：產品轉向、流程與時程管理。</li>
+                  <li><span class="project-k">技術方向</span>React PWA 與 Spring Boot 並行的全端架構構想。</li>
+                  <li><span class="project-k">連結內容</span>團隊簡報，適合了解敘事與分工。</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
