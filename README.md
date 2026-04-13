@@ -1,6 +1,6 @@
 # Kevin 個人履歷網站
 
-一個展示個人技能、學習經歷與專案作品的履歷網站。
+一個展示個人技能、學習經歷與作品集的履歷網站。
 
 🔗 **線上展示**: [https://kevinchen1115.github.io/my-resume](https://kevinchen1115.github.io/my-resume)
 
@@ -8,16 +8,32 @@
 
 ## 專案簡介
 
-這是我在完成 Java 工程師養成班後製作的個人履歷網站，用來展示我的學習成果與專案經驗。網站採用響應式設計，在桌面版和手機版都能正常瀏覽。
+這是我在完成 Java 工程師養成班後製作的個人履歷網站，目標是用清楚的資訊架構呈現：
+
+- 個人背景與技術能力
+- 以 `ai-tech-notes` 為主的作品成果
+- 學習與實作歷程
+
+網站採用響應式設計，在桌面版與手機版都能正常瀏覽。
 
 ---
 
 ## 使用技術
 
+### 網站實作
+
 - HTML5
-- CSS3 (Flexbox, Grid, Media Queries)
-- JavaScript (ES6)
+- CSS3（Flexbox、Grid、Media Queries）
+- JavaScript（ES6）
 - Git / GitHub
+
+### 履歷內容主軸（作品技術）
+
+- Java、Spring Boot
+- PostgreSQL、Data JPA、MySQL
+- Docker、AWS EC2 / RDS
+- Linux
+- GitHub 專案展示（`ai-tech-notes`）
 
 ---
 
@@ -25,31 +41,43 @@
 
 - 響應式設計：支援桌面版與手機版
 - 側邊導航列：桌面版固定側邊欄，手機版為漢堡選單
-- 滾動動畫：使用 IntersectionObserver 實現
+- 技能卡片：以分類方式展示技術能力
+- 作品集連結：支援外部連結（GitHub / Google Slides）
 - 照片輪播與放大功能
-- 平滑滾動導航
+- 平滑滾動與滾動動畫（IntersectionObserver）
 
 ---
 
-## 如何執行
+## 本地預覽（可選）
+
+若你想在本機查看頁面，可用以下步驟：
 
 1. Clone 此專案
+
 ```bash
 git clone https://github.com/KevinChen1115/my-resume.git
 ```
 
-2. 直接用瀏覽器開啟 `index.html` 即可
+2. 進入專案資料夾
+
+```bash
+cd my-resume
+```
+
+3. 直接用瀏覽器開啟 `index.html`
 
 ---
 
 ## 專案結構
-```
-├── index.html          # 主頁面
+
+```text
+├── index.html           # 主頁面
 ├── css/
-│   └── style.css      # 樣式表
+│   └── style.css        # 樣式表
 ├── js/
-│   └── script.js      # JavaScript
-└── img/               # 圖片資源
+│   └── script.js        # JavaScript
+├── img/                 # 圖片資源
+└── README.md
 ```
 
 ---
@@ -63,27 +91,17 @@ git clone https://github.com/KevinChen1115/my-resume.git
 - JavaScript DOM 操作與事件處理
 - IntersectionObserver API 的使用
 - 如何使用 Git 進行版本控制
-- **善用 AI 工具（如 Claude）輔助開發與除錯**
-
----
-
-## 開發過程
-
-這個專案是透過以下方式完成的：
-
-1. **自行規劃**: 決定網站架構與內容
-2. **學習與實作**: 參考網路資源與教學文件
-3. **AI 輔助**: 使用 AI 工具協助解決技術問題、優化程式碼、除錯
-4. **測試與調整**: 不斷測試並修正問題
+- **善用 AI 工具輔助開發**：用於需求拆解、版面重構、文案優化與程式除錯
+- **AI + 自我驗證流程**：先讓 AI 提供方案，再逐段檢查與實測，確保可維護性與可讀性
 
 ---
 
 ## 未來改進
 
-- [ ] 優化載入速度
-- [ ] 加入更多專案作品
-- [ ] 改善 SEO
-- [ ] 加入深色/淺色模式切換
+- [ ] 優化載入速度（圖片壓縮與延遲載入）
+- [ ] 加入更多專案作品與連結
+- [ ] 補齊 SEO 基礎設定（meta description、OG tags）
+- [ ] 視需求加入深色/淺色模式切換
 
 ---
 
@@ -91,9 +109,3 @@ git clone https://github.com/KevinChen1115/my-resume.git
 
 - 📧 Email: kevin2637688@gmail.com
 - 📞 Phone: 0963810779
-
----
-
-## 備註
-
-開發過程中使用了 AI 工具（Claude）協助程式碼撰寫、除錯與優化。我理解所有程式碼的運作原理，並能夠獨立維護與擴展此專案。
